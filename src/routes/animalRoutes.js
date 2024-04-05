@@ -10,3 +10,9 @@ router.post("/animals", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 module.exports = router;
+
+router.get("/animals", (req, res) => {
+    animalSchema.find()
+      .then((data) => res.json(data))
+      .catch((error) => res.json({ message: error }));
+  });
